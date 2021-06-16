@@ -1,0 +1,511 @@
+<div id="leaderboard">
+                <div class="alert alert-success alert-override">
+                    This leaderboard allows you to create custom shareable leaderboards and charts based on selected columns.
+                    Click the "Custom Columns" button to view selectable columns.
+                </div>
+
+        <form class="form-inline">
+                <div class="form-group">
+                        <div class="dropdown">
+                                <span id="lblType" class="ddl-label">Pitchers</span>
+                                <div class="dropdown-arrow">▾</div>
+                    <select id="ddlType" class="form-control dropdown-fix" selected="selected">
+                        <option value="batter">Batters</option>
+                        <option value="pitcher">Pitchers</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                        <div id="ddlSeason" class="dropdown">
+                                <span id="lblSeason" class="ddl-label">Year (2021+2)</span>
+                                <div class="dropdown-arrow">▾</div>
+                        </div>
+                        <div id="seasonSelectors" style="display: block;">
+                                <div style="display: flex; position: relative;">
+                                        <div style="width: 80%;"><b>Select Years (Statcast Options Only Available 2015+):</b></div>
+                                        <div id="closeSeasonBox" style="width: 20%; text-align: right;">
+                                                <button id="btnSeasonClose" class="btn-default" style="padding: 2px; position: absolute; top: -8px; right: 4px;">&nbsp;X&nbsp;</button>
+                                        </div>
+                                </div>
+                                <div class="flex-container">
+                                <div class="flex">
+                                        <input type="checkbox" id="year_2021" class="year" name="year_2021"> <label id="lbl_year_2021" for="year_2021">2021</label><br>
+                                        <input type="checkbox" id="year_2020" class="year" name="year_2020"> <label id="lbl_year_2020" for="year_2020">2020</label><br>
+                                        <input type="checkbox" id="year_2019" class="year" name="year_2019"> <label id="lbl_year_2019" for="year_2019">2019</label><br>
+                                        <input type="checkbox" id="year_2018" class="year" name="year_2018"> <label id="lbl_year_2018" for="year_2018">2018</label><br>
+                                        <input type="checkbox" id="year_2017" class="year" name="year_2017"> <label id="lbl_year_2017" for="year_2017">2017</label><br>
+                                        <input type="checkbox" id="year_2016" class="year" name="year_2016"> <label id="lbl_year_2016" for="year_2016">2016</label><br>
+                                        <input type="checkbox" id="year_2015" class="year" name="year_2015"> <label id="lbl_year_2015" for="year_2015">2015</label><br>
+                                        <input type="checkbox" id="year_2014" class="year" name="year_2014"> <label id="lbl_year_2014" for="year_2014">2014</label><br>
+                                        <input type="checkbox" id="year_2013" class="year" name="year_2013"> <label id="lbl_year_2013" for="year_2013">2013</label><br>
+                                        <input type="checkbox" id="year_2012" class="year" name="year_2012"> <label id="lbl_year_2012" for="year_2012">2012</label><br>
+                                        <input type="checkbox" id="year_2011" class="year" name="year_2011"> <label id="lbl_year_2011" for="year_2011">2011</label><br>
+                                        <input type="checkbox" id="year_2010" class="year" name="year_2010"> <label id="lbl_year_2010" for="year_2010">2010</label><br>
+                                        <input type="checkbox" id="year_2009" class="year" name="year_2009"> <label id="lbl_year_2009" for="year_2009">2009</label><br>
+                                        <input type="checkbox" id="year_2008" class="year" name="year_2008"> <label id="lbl_year_2008" for="year_2008">2008</label><br>
+                                        <input type="checkbox" id="year_2007" class="year" name="year_2007"> <label id="lbl_year_2007" for="year_2007">2007</label><br>
+                                        <input type="checkbox" id="year_2006" class="year" name="year_2006"> <label id="lbl_year_2006" for="year_2006">2006</label><br>
+                                        <input type="checkbox" id="year_2005" class="year" name="year_2005"> <label id="lbl_year_2005" for="year_2005">2005</label><br>
+                                        <input type="checkbox" id="year_2004" class="year" name="year_2004"> <label id="lbl_year_2004" for="year_2004">2004</label><br>
+                                        <input type="checkbox" id="year_2003" class="year" name="year_2003"> <label id="lbl_year_2003" for="year_2003">2003</label><br>
+                                        <input type="checkbox" id="year_2002" class="year" name="year_2002"> <label id="lbl_year_2002" for="year_2002">2002</label><br>
+                                        <input type="checkbox" id="year_2001" class="year" name="year_2001"> <label id="lbl_year_2001" for="year_2001">2001</label><br>
+                                        <input type="checkbox" id="year_2000" class="year" name="year_2000"> <label id="lbl_year_2000" for="year_2000">2000</label><br>
+                                        <input type="checkbox" id="year_1999" class="year" name="year_1999"> <label id="lbl_year_1999" for="year_1999">1999</label><br>
+                                        <input type="checkbox" id="year_1998" class="year" name="year_1998"> <label id="lbl_year_1998" for="year_1998">1998</label><br>
+                                        <input type="checkbox" id="year_1997" class="year" name="year_1997"> <label id="lbl_year_1997" for="year_1997">1997</label><br>
+                                        <input type="checkbox" id="year_1996" class="year" name="year_1996"> <label id="lbl_year_1996" for="year_1996">1996</label><br>
+                                        <input type="checkbox" id="year_1995" class="year" name="year_1995"> <label id="lbl_year_1995" for="year_1995">1995</label><br>
+                                        <input type="checkbox" id="year_1994" class="year" name="year_1994"> <label id="lbl_year_1994" for="year_1994">1994</label><br>
+                                        <input type="checkbox" id="year_1993" class="year" name="year_1993"> <label id="lbl_year_1993" for="year_1993">1993</label><br>
+                                        <input type="checkbox" id="year_1992" class="year" name="year_1992"> <label id="lbl_year_1992" for="year_1992">1992</label><br>
+                                        <input type="checkbox" id="year_1991" class="year" name="year_1991"> <label id="lbl_year_1991" for="year_1991">1991</label><br>
+                                        <input type="checkbox" id="year_1990" class="year" name="year_1990"> <label id="lbl_year_1990" for="year_1990">1990</label><br>
+                                        <input type="checkbox" id="year_1989" class="year" name="year_1989"> <label id="lbl_year_1989" for="year_1989">1989</label><br>
+                                        <input type="checkbox" id="year_1988" class="year" name="year_1988"> <label id="lbl_year_1988" for="year_1988">1988</label><br>
+                                        <input type="checkbox" id="year_1987" class="year" name="year_1987"> <label id="lbl_year_1987" for="year_1987">1987</label><br>
+                                        <input type="checkbox" id="year_1986" class="year" name="year_1986"> <label id="lbl_year_1986" for="year_1986">1986</label><br>
+                                        <input type="checkbox" id="year_1985" class="year" name="year_1985"> <label id="lbl_year_1985" for="year_1985">1985</label><br>
+                                        <input type="checkbox" id="year_1984" class="year" name="year_1984"> <label id="lbl_year_1984" for="year_1984">1984</label><br>
+                                        <input type="checkbox" id="year_1983" class="year" name="year_1983"> <label id="lbl_year_1983" for="year_1983">1983</label><br>
+                                        <input type="checkbox" id="year_1982" class="year" name="year_1982"> <label id="lbl_year_1982" for="year_1982">1982</label><br>
+                                        <input type="checkbox" id="year_1981" class="year" name="year_1981"> <label id="lbl_year_1981" for="year_1981">1981</label><br>
+                                        <input type="checkbox" id="year_1980" class="year" name="year_1980"> <label id="lbl_year_1980" for="year_1980">1980</label><br>
+                                        <input type="checkbox" id="year_1979" class="year" name="year_1979"> <label id="lbl_year_1979" for="year_1979">1979</label><br>
+                                        <input type="checkbox" id="year_1978" class="year" name="year_1978"> <label id="lbl_year_1978" for="year_1978">1978</label><br>
+                                        <input type="checkbox" id="year_1977" class="year" name="year_1977"> <label id="lbl_year_1977" for="year_1977">1977</label><br>
+                                        <input type="checkbox" id="year_1976" class="year" name="year_1976"> <label id="lbl_year_1976" for="year_1976">1976</label><br>
+                                        <input type="checkbox" id="year_1975" class="year" name="year_1975"> <label id="lbl_year_1975" for="year_1975">1975</label><br>
+                                        <input type="checkbox" id="year_1974" class="year" name="year_1974"> <label id="lbl_year_1974" for="year_1974">1974</label><br>
+                                        <input type="checkbox" id="year_1973" class="year" name="year_1973"> <label id="lbl_year_1973" for="year_1973">1973</label><br>
+                                        <input type="checkbox" id="year_1972" class="year" name="year_1972"> <label id="lbl_year_1972" for="year_1972">1972</label><br>
+                                        <input type="checkbox" id="year_1971" class="year" name="year_1971"> <label id="lbl_year_1971" for="year_1971">1971</label><br>
+                                        <input type="checkbox" id="year_1970" class="year" name="year_1970"> <label id="lbl_year_1970" for="year_1970">1970</label><br>
+                                        <input type="checkbox" id="year_1969" class="year" name="year_1969"> <label id="lbl_year_1969" for="year_1969">1969</label><br>
+                                        <input type="checkbox" id="year_1968" class="year" name="year_1968"> <label id="lbl_year_1968" for="year_1968">1968</label><br>
+                                        <input type="checkbox" id="year_1967" class="year" name="year_1967"> <label id="lbl_year_1967" for="year_1967">1967</label><br>
+                                        <input type="checkbox" id="year_1966" class="year" name="year_1966"> <label id="lbl_year_1966" for="year_1966">1966</label><br>
+                                        <input type="checkbox" id="year_1965" class="year" name="year_1965"> <label id="lbl_year_1965" for="year_1965">1965</label><br>
+                                        <input type="checkbox" id="year_1964" class="year" name="year_1964"> <label id="lbl_year_1964" for="year_1964">1964</label><br>
+                                        <input type="checkbox" id="year_1963" class="year" name="year_1963"> <label id="lbl_year_1963" for="year_1963">1963</label><br>
+                                        <input type="checkbox" id="year_1962" class="year" name="year_1962"> <label id="lbl_year_1962" for="year_1962">1962</label><br>
+                                        <input type="checkbox" id="year_1961" class="year" name="year_1961"> <label id="lbl_year_1961" for="year_1961">1961</label><br>
+                                        <input type="checkbox" id="year_1960" class="year" name="year_1960"> <label id="lbl_year_1960" for="year_1960">1960</label><br>
+                                        <input type="checkbox" id="year_1959" class="year" name="year_1959"> <label id="lbl_year_1959" for="year_1959">1959</label><br>
+                                        <input type="checkbox" id="year_1958" class="year" name="year_1958"> <label id="lbl_year_1958" for="year_1958">1958</label><br>
+                                        <input type="checkbox" id="year_1957" class="year" name="year_1957"> <label id="lbl_year_1957" for="year_1957">1957</label><br>
+                                        <input type="checkbox" id="year_1956" class="year" name="year_1956"> <label id="lbl_year_1956" for="year_1956">1956</label><br>
+                                        <input type="checkbox" id="year_1955" class="year" name="year_1955"> <label id="lbl_year_1955" for="year_1955">1955</label><br>
+                                        <input type="checkbox" id="year_1954" class="year" name="year_1954"> <label id="lbl_year_1954" for="year_1954">1954</label><br>
+                                        <input type="checkbox" id="year_1953" class="year" name="year_1953"> <label id="lbl_year_1953" for="year_1953">1953</label><br>
+                                        <input type="checkbox" id="year_1952" class="year" name="year_1952"> <label id="lbl_year_1952" for="year_1952">1952</label><br>
+                                        <input type="checkbox" id="year_1951" class="year" name="year_1951"> <label id="lbl_year_1951" for="year_1951">1951</label><br>
+                                        <input type="checkbox" id="year_1950" class="year" name="year_1950"> <label id="lbl_year_1950" for="year_1950">1950</label><br>
+                                </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="form-group">
+                        <div class="dropdown">
+                                <span id="lblMin" class="ddl-label">Minimum PA (q)</span>
+                                <div class="dropdown-arrow">▾</div>
+                <select id="ddlMin" class="form-control dropdown-fix" selected="selected">
+                        <option value="q">Qualified</option>
+                        <option value="10">10</option>
+                        <option value="25" selected="">25</option>
+                        <option value="50">50</option>
+                        <option value="75">75</option>
+                        <option value="100">100</option>
+                        <option value="150">150</option>
+                        <option value="200">200</option>
+                        <option value="250">250</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div id="ddlColumns" class="dropdown">
+                        <span id="lblColumns" class="ddl-label" style="cursor: pointer">Custom Columns (27)</span>
+                        <div class="dropdown-arrow">▾</div>
+                    </div>
+                        <div id="columnSelectors" style="display: block;">
+                            <div style="display: flex; position: relative;">
+                                <div style="width: 80%;"><b>Select Columns to Add (Statcast Options Only Available 2015+):</b></div>
+                                <div id="closeBox" style="width: 20%; text-align: right;">
+                                        <button id="btnColumnClose" class="btn-default" style="padding: 2px; position: absolute; top: -8px; right: 4px;">&nbsp;X&nbsp;</button>
+                                </div>
+                            </div>
+                            <br>
+                        <input type="checkbox" id="chkBasic" class="selection" name="chkBasic"> <label id="lbl_basic" for="chkBasic">Basic Stats</label>
+                        &nbsp;
+                        <input type="checkbox" id="chkStatcast" class="selection" name="chkStatcast"> <label id="lbl_statcast" for="chkStatcast">Statcast</label>
+                        &nbsp;
+                        <button id="btnUnselect" class="btn-default" style="padding: 2px 4px 2px 4px; background-color: #f5f5f5; color: #000">Unselect All</button>
+                        <hr>
+                            <div class="flex-container">
+                            <div class="flex">
+                            <h6>Standard Stats</h6>
+                            <!--<input type="checkbox" id="hit" class="column basic" name="hit"> <label id="lbl_hit" for="hit">Hits</label><br/>
+                            <input type="checkbox" id="single" class="column basic" name="single"> <label id="lbl_single" for="single">1B</label><br/>
+                            <input type="checkbox" id="triple" class="column basic" name="triple"> <label id="lbl_triple" for="triple">3B</label><br/>
+                            <input type="checkbox" id="home_run" class="column basic" name="home_run"> <label id="lbl_home_run" for="home_run">HR</label><br/>
+
+                            <input type="checkbox" id="batting_avg" class="column basic" name="batting_avg"> <label id="lbl_batting_avg" for="batting_avg">AVG</label><br/>
+                            <input type="checkbox" id="slg" class="column basic" name="slg"> <label id="lbl_slg" for="slg">SLG</label><br/>
+                            <input type="checkbox" id="obp" class="column basic" name="obp"> <label id="lbl_obp" for="obp">OBP</label><br/>
+                            <input type="checkbox" id="iso" class="column" name="iso"> <label id="lbl_iso" for="iso">ISO</label><br/>
+                            <input type="checkbox" id="babip" class="column" name="babip"> <label id="lbl_babip" for="babip">BABIP</label><br/>
+                            <input type="checkbox" id="woba" class="column basic" name="woba"> <label id="lbl_woba" for="woba">wOBA</label><br/>
+                            <input type="checkbox" id="bacon" class="column" name="bacon"> <label id="lbl_bacon" for="bacon">BA - Contact</label><br/>
+                            <input type="checkbox" id="wobacon" class="column" name="wobacon"> <label id="lbl_wobacon" for="wobacon">wOBA - Contact</label><br/>
+                            <input type="checkbox" id="hbp" class="column" name="hbp"> <label id="lbl_hbp" for="hbp">HBP</label><br/>
+                            <input type="checkbox" id="hr_flyballs_percent" class="column" name="hr_flyballs_percent"> <label id="lbl_hr_flyballs_percent" for="hr_flyballs_percent">HR/FB%</label><br/>
+                            <input type="checkbox" id="strikeout" class="column basic" name="strikeout"> <label id="lbl_strikeout" for="strikeout">SO</label><br/>
+                            <input type="checkbox" id="walk" class="column basic" name="walk"> <label id="lbl_walk" for="walk">BB</label><br/>
+
+
+
+
+                            <input type="checkbox" id="pa" class="column" name="pa"> <label id="lbl_pa" for="pa">PA</label><br/>
+                            <input type="checkbox" id="pa_per_game" class="column" name="pa_per_game"> <label id="lbl_pa_per_game" for="pa_per_game">PA Per Game</label><br/>-->
+
+                            <input type="checkbox" id="player_age" class="column basic" name="player_age"> <label id="lbl_player_age" for="player_age">Age</label><br>
+
+                            <input type="checkbox" id="p_game" class="column basic" name="p_game"> <label id="lbl_p_game" for="p_game">G</label><br>
+                            <input type="checkbox" id="p_formatted_ip" class="column basic" name="p_formatted_ip"> <label id="lbl_p_formatted_ip" for="p_formatted_ip">IP</label><br>
+                            <input type="checkbox" id="p_total_pa" class="column basic" name="p_total_pa"> <label id="lbl_p_total_pa" for="p_total_pa">BF</label><br>
+                            <input type="checkbox" id="p_ab" class="column basic" name="p_ab"> <label id="lbl_p_ab" for="p_ab">AB</label><br>
+                            <input type="checkbox" id="p_total_hits" class="column basic" name="p_total_hits"> <label id="lbl_p_total_hits" for="p_total_hits">H</label><br>
+                            <input type="checkbox" id="p_single" class="column basic" name="p_single"> <label id="lbl_p_single" for="p_single">1B</label><br>
+                            <input type="checkbox" id="p_double" class="column basic" name="p_double"> <label id="lbl_p_double" for="p_double">2B</label><br>
+                            <input type="checkbox" id="p_triple" class="column basic" name="p_triple"> <label id="lbl_p_triple" for="p_triple">3B</label><br>
+                            <input type="checkbox" id="p_home_run" class="column basic" name="p_home_run"> <label id="lbl_p_home_run" for="p_home_run">HR</label><br>
+                            <input type="checkbox" id="p_strikeout" class="column basic" name="p_strikeout"> <label id="lbl_p_strikeout" for="p_strikeout">SO</label><br>
+                            <input type="checkbox" id="p_walk" class="column basic" name="p_walk"> <label id="lbl_p_walk" for="p_walk">BB</label><br>
+                            <input type="checkbox" id="p_k_percent" class="column basic" name="p_k_percent"> <label id="lbl_p_k_percent" for="p_k_percent">K%</label><br>
+                            <input type="checkbox" id="p_bb_percent" class="column basic" name="p_bb_percent"> <label id="lbl_p_bb_percent" for="p_bb_percent">BB%</label><br>
+                            <input type="checkbox" id="batting_avg" class="column basic" name="batting_avg"> <label id="lbl_batting_avg" for="batting_avg">AVG</label><br>
+                            <input type="checkbox" id="slg_percent" class="column basic" name="slg_percent"> <label id="lbl_slg_percent" for="slg_percent">SLG</label><br>
+                            <input type="checkbox" id="on_base_percent" class="column basic" name="on_base_percent"> <label id="lbl_on_base_percent" for="on_base_percent">OBP</label><br>
+                            <input type="checkbox" id="on_base_plus_slg" class="column basic" name="on_base_plus_slg"> <label id="lbl_on_base_plus_slg" for="on_base_plus_slg">OPS</label><br>
+                            <input type="checkbox" id="isolated_power" class="column" name="isolated_power"> <label id="lbl_isolated_power" for="isolated_power">ISO</label><br>
+
+                            <input type="checkbox" id="p_earned_run" class="column" name="p_earned_run"> <label id="lbl_p_earned_run" for="p_earned_run">ER</label><br>
+                            <input type="checkbox" id="p_run" class="column" name="p_run"> <label id="lbl_p_run" for="p_run">R</label><br>
+                            <input type="checkbox" id="p_save" class="column" name="p_save"> <label id="lbl_p_save" for="p_save">S</label><br>
+                            <input type="checkbox" id="p_blown_save" class="column" name="p_blown_save"> <label id="lbl_p_blown_save" for="p_blown_save">BS</label><br>
+                            <input type="checkbox" id="p_out" class="column" name="p_out"> <label id="lbl_p_out" for="p_out">Outs</label><br>
+                            <input type="checkbox" id="p_win" class="column" name="p_win"> <label id="lbl_p_win" for="p_win">W</label><br>
+                            <input type="checkbox" id="p_loss" class="column" name="p_loss"> <label id="lbl_p_loss" for="p_loss">L</label><br>
+                            <input type="checkbox" id="p_wild_pitch" class="column" name="p_wild_pitch"> <label id="lbl_p_wild_pitch" for="p_wild_pitch">WP</label><br>
+                            <input type="checkbox" id="p_balk" class="column" name="p_balk"> <label id="lbl_p_balk" for="p_balk">Balks</label><br>
+                            <input type="checkbox" id="p_shutout" class="column" name="p_shutout"> <label id="lbl_p_shutout" for="p_shutout">ShutOut</label><br>
+
+                            <input type="checkbox" id="p_era" class="column" name="p_era"> <label id="lbl_p_era" for="p_era">ERA</label><br>
+                            <input type="checkbox" id="p_opp_batting_avg" class="column" name="p_opp_batting_avg"> <label id="lbl_p_opp_batting_avg" for="p_opp_batting_avg">BAA</label><br>
+                            <input type="checkbox" id="p_opp_on_base_avg" class="column" name="p_opp_on_base_avg"> <label id="lbl_p_opp_on_base_avg" for="p_opp_on_base_avg">OBPA</label><br>
+
+                            <input type="checkbox" id="p_total_stolen_base" class="column" name="p_total_stolen_base"> <label id="lbl_p_total_stolen_base" for="p_total_stolen_base">SB</label><br>
+                            <input type="checkbox" id="p_pickoff_attempt_1b" class="column" name="p_pickoff_attempt_1b"> <label id="lbl_p_pickoff_attempt_1b" for="p_pickoff_attempt_1b">Pickoff Attempt-1B</label><br>
+                            <input type="checkbox" id="p_pickoff_attempt_2b" class="column" name="p_pickoff_attempt_2b"> <label id="lbl_p_pickoff_attempt_2b" for="p_pickoff_attempt_2b">Pickoff Attempt-2B</label><br>
+                            <input type="checkbox" id="p_pickoff_attempt_3b" class="column" name="p_pickoff_attempt_3b"> <label id="lbl_p_pickoff_attempt_3b" for="p_pickoff_attempt_3b">Pickoff Attempt-3B</label><br>
+                            <input type="checkbox" id="p_pickoff_1b" class="column" name="p_pickoff_1b"> <label id="lbl_p_pickoff_1b" for="p_pickoff_1b">Pickoff-1B-Out</label><br>
+                            <input type="checkbox" id="p_pickoff_2b" class="column" name="p_pickoff_2b"> <label id="lbl_p_pickoff_2b" for="p_pickoff_2b">Pickoff-2B-Out</label><br>
+                            <input type="checkbox" id="p_pickoff_3b" class="column" name="p_pickoff_3b"> <label id="lbl_p_pickoff_3b" for="p_pickoff_3b">Pickoff-3B-Out</label><br>
+
+
+                            <input type="checkbox" id="p_lob" class="column" name="p_lob"> <label id="lbl_p_lob" for="p_lob">LOB</label><br>
+                            <input type="checkbox" id="p_rbi" class="column" name="p_rbi"> <label id="lbl_p_rbi" for="p_rbi">RBI</label><br>
+                            <input type="checkbox" id="p_stolen_base_2b" class="column" name="p_stolen_base_2b"> <label id="lbl_p_stolen_base_2b" for="p_stolen_base_2b">SB-2B</label><br>
+                            <input type="checkbox" id="p_stolen_base_3b" class="column" name="p_stolen_base_3b"> <label id="lbl_p_stolen_base_3b" for="p_stolen_base_3b">SB-3B</label><br>
+                            <input type="checkbox" id="p_stolen_base_home" class="column" name="p_stolen_base_home"> <label id="lbl_p_stolen_base_home" for="p_stolen_base_home">SB-HP</label><br>
+                            <input type="checkbox" id="p_quality_start" class="column" name="p_quality_start"> <label id="lbl_p_quality_start" for="p_quality_start">QS</label><br>
+                            <input type="checkbox" id="p_walkoff" class="column" name="p_walkoff"> <label id="lbl_p_walkoff" for="p_walkoff">Walkoff</label><br>
+                            <input type="checkbox" id="p_run_support" class="column" name="p_run_support"> <label id="lbl_p_run_support" for="p_run_support">RunSupport</label><br>
+
+
+                            <input type="checkbox" id="p_ab_scoring" class="column" name="p_ab_scoring"> <label id="lbl_p_ab_scoring" for="p_ab_scoring">AB - Score</label><br>
+                            <input type="checkbox" id="p_automatic_ball" class="column" name="p_automatic_ball"> <label id="lbl_p_automatic_ball" for="p_automatic_ball">AutoBall</label><br>
+                            <input type="checkbox" id="p_ball" class="column" name="p_ball"> <label id="lbl_p_ball" for="p_ball">Balls</label><br>
+                            <input type="checkbox" id="p_called_strike" class="column" name="p_called_strike"> <label id="lbl_p_called_strike" for="p_called_strike">Called Strikes</label><br>
+                            <input type="checkbox" id="p_catcher_interf" class="column" name="p_catcher_interf"> <label id="lbl_p_catcher_interf" for="p_catcher_interf">Catcher Interference</label><br>
+                            <input type="checkbox" id="p_caught_stealing_2b" class="column" name="p_caught_stealing_2b"> <label id="lbl_p_caught_stealing_2b" for="p_caught_stealing_2b">CS-2B</label><br>
+                            <input type="checkbox" id="p_caught_stealing_3b" class="column" name="p_caught_stealing_3b"> <label id="lbl_p_caught_stealing_3b" for="p_caught_stealing_3b">CS-3B</label><br>
+                            <input type="checkbox" id="p_caught_stealing_home" class="column" name="p_caught_stealing_home"> <label id="lbl_p_caught_stealing_home" for="p_caught_stealing_home">CS-HP</label><br>
+                            <input type="checkbox" id="p_complete_game" class="column" name="p_complete_game"> <label id="lbl_p_complete_game" for="p_complete_game">CG</label><br>
+                            <input type="checkbox" id="p_defensive_indiff" class="column" name="p_defensive_indiff"> <label id="lbl_p_defensive_indiff" for="p_defensive_indiff">DefInd</label><br>
+                            <input type="checkbox" id="p_foul" class="column" name="p_foul"> <label id="lbl_p_foul" for="p_foul">Foul</label><br>
+                            <input type="checkbox" id="p_foul_tip" class="column" name="p_foul_tip"> <label id="lbl_p_foul_tip" for="p_foul_tip">FoulTip</label><br>
+                            <input type="checkbox" id="p_game_finished" class="column" name="p_game_finished"> <label id="lbl_p_game_finished" for="p_game_finished">G-Finished</label><br>
+                            <input type="checkbox" id="p_game_in_relief" class="column" name="p_game_in_relief"> <label id="lbl_p_game_in_relief" for="p_game_in_relief">G-RP</label><br>
+                            <input type="checkbox" id="p_gnd_into_dp" class="column" name="p_gnd_into_dp"> <label id="lbl_p_gnd_into_dp" for="p_gnd_into_dp">GIDP</label><br>
+                            <input type="checkbox" id="p_gnd_into_tp" class="column" name="p_gnd_into_tp"> <label id="lbl_p_gnd_into_tp" for="p_gnd_into_tp">GITP</label><br>
+                            <input type="checkbox" id="p_gnd_rule_double" class="column" name="p_gnd_rule_double"> <label id="lbl_p_gnd_rule_double" for="p_gnd_rule_double">2B-OOP</label><br>
+                            <input type="checkbox" id="p_hit_by_pitch" class="column" name="p_hit_by_pitch"> <label id="lbl_p_hit_by_pitch" for="p_hit_by_pitch">HBP</label><br>
+                            <input type="checkbox" id="p_hit_fly" class="column" name="p_hit_fly"> <label id="lbl_p_hit_fly" for="p_hit_fly">Hit-FlyBall</label><br>
+                            <input type="checkbox" id="p_hit_ground" class="column" name="p_hit_ground"> <label id="lbl_p_hit_ground" for="p_hit_ground">Hit-GB</label><br>
+                            <input type="checkbox" id="p_hit_line_drive" class="column" name="p_hit_line_drive"> <label id="lbl_p_hit_line_drive" for="p_hit_line_drive">Hit-LD</label><br>
+                            <input type="checkbox" id="p_hit_into_play" class="column" name="p_hit_into_play"> <label id="lbl_p_hit_into_play" for="p_hit_into_play">HIP</label><br>
+                            <input type="checkbox" id="p_hit_scoring" class="column" name="p_hit_scoring"> <label id="lbl_p_hit_scoring" for="p_hit_scoring">Hit-RunScore</label><br>
+                            <input type="checkbox" id="p_hold" class="column" name="p_hold"> <label id="lbl_p_hold" for="p_hold">Hold</label><br>
+                            <input type="checkbox" id="p_intent_ball" class="column" name="p_intent_ball"> <label id="lbl_p_intent_ball" for="p_intent_ball">IntentBall</label><br>
+                            <input type="checkbox" id="p_intent_walk" class="column" name="p_intent_walk"> <label id="lbl_p_intent_walk" for="p_intent_walk">IntentWalk</label><br>
+                            <input type="checkbox" id="p_missed_bunt" class="column" name="p_missed_bunt"> <label id="lbl_p_missed_bunt" for="p_missed_bunt">MissedBunt</label><br>
+                            <input type="checkbox" id="p_out_fly" class="column" name="p_out_fly"> <label id="lbl_p_out_fly" for="p_out_fly">Out-FB</label><br>
+                            <input type="checkbox" id="p_out_ground" class="column" name="p_out_ground"> <label id="lbl_p_out_ground" for="p_out_ground">Out-GB</label><br>
+                            <input type="checkbox" id="p_out_line_drive" class="column" name="p_out_line_drive"> <label id="lbl_p_out_line_drive" for="p_out_line_drive">Out-LD</label><br>
+                            <input type="checkbox" id="p_passed_ball" class="column" name="p_passed_ball"> <label id="lbl_p_passed_ball" for="p_passed_ball">PassedBall</label><br>
+
+
+                            <input type="checkbox" id="p_pickoff_error_1b" class="column" name="p_pickoff_error_1b"> <label id="lbl_p_pickoff_error_1b" for="p_pickoff_error_1b">Pickoff Error-1B</label><br>
+                            <input type="checkbox" id="p_pickoff_error_2b" class="column" name="p_pickoff_error_2b"> <label id="lbl_p_pickoff_error_2b" for="p_pickoff_error_2b">Pickoff Error-2B</label><br>
+                            <input type="checkbox" id="p_pickoff_error_3b" class="column" name="p_pickoff_error_3b"> <label id="lbl_p_pickoff_error_3b" for="p_pickoff_error_3b">Pickoff Error-3B</label><br>
+                            <input type="checkbox" id="p_pitchout" class="column" name="p_pitchout"> <label id="lbl_p_pitchout" for="p_pitchout">Pitchout</label><br>
+                            <input type="checkbox" id="p_relief_no_out" class="column" name="p_relief_no_out"> <label id="lbl_p_relief_no_out" for="p_relief_no_out">Relief-No Out</label><br>
+                            <input type="checkbox" id="p_sac_bunt" class="column" name="p_sac_bunt"> <label id="lbl_p_sac_bunt" for="p_sac_bunt">SacBunt</label><br>
+                            <input type="checkbox" id="p_sac_fly" class="column" name="p_sac_fly"> <label id="lbl_p_sac_fly" for="p_sac_fly">SacFly</label><br>
+
+                            <input type="checkbox" id="p_starting_p" class="column" name="p_starting_p"> <label id="lbl_p_starting_p" for="p_starting_p">GS</label><br>
+                            <input type="checkbox" id="p_swinging_strike" class="column" name="p_swinging_strike"> <label id="lbl_p_swinging_strike" for="p_swinging_strike">Swing &amp; Misses</label><br>
+                            <input type="checkbox" id="p_unearned_run" class="column" name="p_unearned_run"> <label id="lbl_p_unearned_run" for="p_unearned_run">Unearned Run</label><br>
+                            <input type="checkbox" id="p_total_ball" class="column" name="p_total_ball"> <label id="lbl_p_total_ball" for="p_total_ball">TotalBalls</label><br>
+                            <input type="checkbox" id="p_total_bases" class="column" name="p_total_bases"> <label id="lbl_p_total_bases" for="p_total_bases">TotalBases</label><br>
+                            <input type="checkbox" id="p_total_caught_stealing" class="column" name="p_total_caught_stealing"> <label id="lbl_p_total_caught_stealing" for="p_total_caught_stealing">CS</label><br>
+                            <input type="checkbox" id="p_total_pickoff" class="column" name="p_total_pickoff"> <label id="lbl_p_total_pickoff" for="p_total_pickoff">Pickoffs</label><br>
+                            <input type="checkbox" id="p_total_pickoff_attempt" class="column" name="p_total_pickoff_attempt"> <label id="lbl_p_total_pickoff_attempt" for="p_total_pickoff_attempt">Pickoff Attempts</label><br>
+                            <input type="checkbox" id="p_total_pickoff_error" class="column" name="p_total_pickoff_error"> <label id="lbl_p_total_pickoff_error" for="p_total_pickoff_error">Pickoff Errors</label><br>
+                            <input type="checkbox" id="p_total_pitches" class="column" name="p_total_pitches"> <label id="lbl_p_total_pitches" for="p_total_pitches">TP</label><br>
+                            <input type="checkbox" id="p_total_sacrifices" class="column" name="p_total_sacrifices"> <label id="lbl_p_total_sacrifices" for="p_total_sacrifices">T-Sac</label><br>
+                            <input type="checkbox" id="p_total_strike" class="column" name="p_total_strike"> <label id="lbl_p_total_strike" for="p_total_strike">Strikes</label><br>
+                            <input type="checkbox" id="p_total_swinging_strike" class="column" name="p_total_swinging_strike"> <label id="lbl_p_total_swinging_strike" for="p_total_swinging_strike">Total Swings</label><br>
+                            <input type="checkbox" id="p_inh_runner" class="column" name="p_inh_runner"> <label id="lbl_p_inh_runner" for="p_inh_runner">Inherited Runners</label><br>
+                            <input type="checkbox" id="p_inh_runner_scored" class="column" name="p_inh_runner_scored"> <label id="lbl_p_inh_runner_scored" for="p_inh_runner_scored">Inherited Runners Scored</label><br>
+                            <input type="checkbox" id="p_beq_runner" class="column" name="p_beq_runner"> <label id="lbl_p_beq_runner" for="p_beq_runner">Bequeath Runner</label><br>
+                            <input type="checkbox" id="p_beq_runner_scored" class="column" name="p_beq_runner_scored"> <label id="lbl_p_beq_runner_scored" for="p_beq_runner_scored">Bequeath Runner Scored</label><br>
+                            <input type="checkbox" id="p_reached_on_error" class="column" name="p_reached_on_error"> <label id="lbl_p_reached_on_error" for="p_reached_on_error">ROE</label><br>
+                            </div>
+                                <div class="flex">
+                                <h6>Statcast Stats</h6>
+                                <input type="checkbox" id="xba" class="column statcast" name="xba"> <label id="lbl_xba" for="xba">xBA</label><br>
+                                <input type="checkbox" id="xslg" class="column statcast" name="xslg"> <label id="lbl_xslg" for="xslg">xSLG</label><br>
+                                <input type="checkbox" id="woba" class="column basic" name="woba"> <label id="lbl_woba" for="woba">wOBA</label><br>
+                                <input type="checkbox" id="xwoba" class="column statcast" name="xwoba"> <label id="lbl_xwoba" for="xwoba">xwOBA</label><br>
+                                <input type="checkbox" id="xobp" class="column statcast" name="xobp"> <label id="lbl_xobp" for="xobp">xOBP</label><br>
+                                <input type="checkbox" id="xiso" class="column statcast" name="xiso"> <label id="lbl_xiso" for="xiso">xISO</label><br>
+                                <input type="checkbox" id="wobacon" class="column" name="wobacon"> <label id="lbl_wobacon" for="wobacon">wOBACON</label><br>
+                                <input type="checkbox" id="xwobacon" class="column" name="xwobacon"> <label id="lbl_xwobacon" for="xwobacon">xwOBACON</label><br>
+                                <input type="checkbox" id="bacon" class="column" name="bacon"> <label id="lbl_bacon" for="bacon">BACON</label><br>
+                                <input type="checkbox" id="xbacon" class="column" name="xbacon"> <label id="lbl_xbacon" for="xbacon">xBACON</label><br>
+                                <input type="checkbox" id="xbadiff" class="column" name="xbadiff"> <label id="lbl_xbadiff" for="xbadiff">BA - xBA</label><br>
+                                <input type="checkbox" id="xslgdiff" class="column" name="xslgdiff"> <label id="lbl_xslgdiff" for="xslgdiff">SLG - xSLG</label><br>
+                                <input type="checkbox" id="wobadif" class="column" name="wobadif"> <label id="lbl_wobadif" for="wobadif">wOBA - xwOBA</label><br>
+
+                                <h6>Quality of Contact</h6>
+
+                                <input type="checkbox" id="exit_velocity_avg" class="column statcast" name="exit_velocity_avg"> <label id="lbl_exit_velocity_avg" for="exit_velocity_avg">Avg EV (MPH)</label><br>
+                                <input type="checkbox" id="launch_angle_avg" class="column statcast" name="launch_angle_avg"> <label id="lbl_launch_angle_avg" for="launch_angle_avg">Avg LA (°)</label><br>
+                                <input type="checkbox" id="sweet_spot_percent" class="column statcast" name="sweet_spot_percent"> <label id="lbl_sweet_spot_percent" for="sweet_spot_percent">Sweet Spot %</label><br>
+
+                                <input type="checkbox" id="barrels" class="column" name="barrels"> <label id="lbl_barrels" for="barrels">Barrels</label><br>
+                                <input type="checkbox" id="barrel_batted_rate" class="column statcast" name="barrel_batted_rate"> <label id="lbl_barrel_batted_rate" for="barrel_batted_rate">Barrel%</label><br>
+                                <input type="checkbox" id="solidcontact_percent" class="column" name="solidcontact_percent"> <label id="lbl_solidcontact_percent" for="solidcontact_percent">Solid Contact %</label><br>
+                                <input type="checkbox" id="flareburner_percent" class="column" name="flareburner_percent"> <label id="lbl_flareburner_percent" for="flareburner_percent">Flare/Burner %</label><br>
+                                <input type="checkbox" id="poorlyunder_percent" class="column" name="poorlyunder_percent"> <label id="lbl_poorlyunder_percent" for="poorlyunder_percent">Under %</label><br>
+                                <input type="checkbox" id="poorlytopped_percent" class="column" name="poorlytopped_percent"> <label id="lbl_poorlytopped_percent" for="poorlytopped_percent">Topped %</label><br>
+                                <input type="checkbox" id="poorlyweak_percent" class="column" name="poorlyweak_percent"> <label id="lbl_poorlyweak_percent" for="poorlyweak_percent">Poor/Weak %</label><br>
+                                <input type="checkbox" id="hard_hit_percent" class="column" name="hard_hit_percent"> <label id="lbl_hard_hit_percent" for="hard_hit_percent">Hard Hit %</label><br>
+
+                                <h6>Pitches &amp; Location</h6>
+                                <input type="checkbox" id="z_swing_percent" class="column" name="z_swing_percent"> <label id="lbl_z_swing_percent" for="z_swing_percent">Zone Swing %</label><br>
+                                <input type="checkbox" id="z_swing_miss_percent" class="column" name="z_swing_miss_percent"> <label id="lbl_z_swing_miss_percent" for="z_swing_miss_percent">Zone Swing &amp; Miss %</label><br>
+                                <input type="checkbox" id="oz_swing_percent" class="column" name="oz_swing_percent"> <label id="lbl_oz_swing_percent" for="oz_swing_percent">Out of Zone Swing %</label><br>
+                                <input type="checkbox" id="oz_swing_miss_percent" class="column" name="oz_swing_miss_percent"> <label id="lbl_oz_swing_miss_percent" for="oz_swing_miss_percent">Out of Zone Swing &amp; Miss%</label><br>
+                                <input type="checkbox" id="oz_contact_percent" class="column" name="oz_contact_percent"> <label id="lbl_oz_contact_percent" for="oz_contact_percent">Out of Zone Contact %</label><br>
+                                <input type="checkbox" id="out_zone_swing_miss" class="column" name="out_zone_swing_miss"> <label id="lbl_out_zone_swing_miss" for="out_zone_swing_miss">Out of Zone Swing &amp; Miss</label><br>
+                                <input type="checkbox" id="out_zone_swing" class="column" name="out_zone_swing"> <label id="lbl_out_zone_swing" for="out_zone_swing">Out of Zone Swings</label><br>
+                                <input type="checkbox" id="out_zone_percent" class="column" name="out_zone_percent"> <label id="lbl_out_zone_percent" for="out_zone_percent">Out of Zone %</label><br>
+                                <input type="checkbox" id="out_zone" class="column" name="out_zone"> <label id="lbl_out_zone" for="out_zone">Out of Zone</label><br>
+                                <input type="checkbox" id="meatball_swing_percent" class="column" name="meatball_swing_percent"> <label id="lbl_meatball_swing_percent" for="meatball_swing_percent">Meatball Swing %</label><br>
+                                <input type="checkbox" id="meatball_percent" class="column" name="meatball_percent"> <label id="lbl_meatball_percent" for="meatball_percent">Meatball %</label><br>
+                                <input type="checkbox" id="pitch_count_offspeed" class="column" name="pitch_count_offspeed"> <label id="lbl_pitch_count_offspeed" for="pitch_count_offspeed"># Offspeed</label><br>
+                                <input type="checkbox" id="pitch_count_fastball" class="column" name="pitch_count_fastball"> <label id="lbl_pitch_count_fastball" for="pitch_count_fastball"># Fastball</label><br>
+                                <input type="checkbox" id="pitch_count_breaking" class="column" name="pitch_count_breaking"> <label id="lbl_pitch_count_breaking" for="pitch_count_breaking"># Breaking</label><br>
+                                <input type="checkbox" id="pitch_count" class="column" name="pitch_count"> <label id="lbl_pitch_count" for="pitch_count">Pitches</label><br>
+                                <input type="checkbox" id="iz_contact_percent" class="column" name="iz_contact_percent"> <label id="lbl_iz_contact_percent" for="iz_contact_percent">In Zone Contact %</label><br>
+                                <input type="checkbox" id="in_zone_swing_miss" class="column" name="in_zone_swing_miss"> <label id="lbl_in_zone_swing_miss" for="in_zone_swing_miss">In Zone Swing &amp; Miss</label><br>
+                                <input type="checkbox" id="in_zone_swing" class="column" name="in_zone_swing"> <label id="lbl_in_zone_swing" for="in_zone_swing">In Zone Swings</label><br>
+                                <input type="checkbox" id="in_zone_percent" class="column" name="in_zone_percent"> <label id="lbl_in_zone_percent" for="in_zone_percent">In Zone %</label><br>
+                                <input type="checkbox" id="in_zone" class="column" name="in_zone"> <label id="lbl_in_zone" for="in_zone">In Zone</label><br>
+                                <input type="checkbox" id="edge_percent" class="column" name="edge_percent"> <label id="lbl_edge_percent" for="edge_percent">Edge %</label><br>
+                                <input type="checkbox" id="edge" class="column" name="edge"> <label id="lbl_edge" for="edge">Edge</label><br>
+                                <input type="checkbox" id="whiff_percent" class="column" name="whiff_percent"> <label id="lbl_whiff_percent" for="whiff_percent">Whiff %</label><br>
+                                <input type="checkbox" id="swing_percent" class="column" name="swing_percent"> <label id="lbl_swing_percent" for="swing_percent">Swing %</label><br>
+
+                                <input type="checkbox" id="pull_percent" class="column" name="pull_percent"> <label id="lbl_pull_percent" for="pull_percent">Pull %</label><br>
+                                <input type="checkbox" id="straightaway_percent" class="column" name="straightaway_percent"> <label id="lbl_straightaway_percent" for="straightaway_percent">Straight Away %</label><br>
+                                <input type="checkbox" id="opposite_percent" class="column" name="opposite_percent"> <label id="lbl_opposite_percent" for="opposite_percent">Oppo %</label><br>
+                                <input type="checkbox" id="batted_ball" class="column" name="batted_ball"> <label id="lbl_batted_ball" for="batted_ball">Batted Balls</label><br>
+                                <input type="checkbox" id="f_strike_percent" class="column" name="f_strike_percent"> <label id="lbl_f_strike_percent" for="f_strike_percent">First Strike %</label><br>
+                                <input type="checkbox" id="groundballs_percent" class="column" name="groundballs_percent"> <label id="lbl_groundballs_percent" for="groundballs_percent">GB%</label><br>
+                                <input type="checkbox" id="groundballs" class="column" name="groundballs"> <label id="lbl_groundballs" for="groundballs">GB</label><br>
+                                <input type="checkbox" id="flyballs_percent" class="column" name="flyballs_percent"> <label id="lbl_flyballs_percent" for="flyballs_percent">FB%</label><br>
+                                <input type="checkbox" id="flyballs" class="column" name="flyballs"> <label id="lbl_flyballs" for="flyballs">FB</label><br>
+                                <input type="checkbox" id="linedrives_percent" class="column" name="linedrives_percent"> <label id="lbl_linedrives_percent" for="linedrives_percent">LD %</label><br>
+                                <input type="checkbox" id="linedrives" class="column" name="linedrives"> <label id="lbl_linedrives" for="linedrives">LD</label><br>
+                                <input type="checkbox" id="popups_percent" class="column" name="popups_percent"> <label id="lbl_popups_percent" for="popups_percent">Popup %</label><br>
+                                <input type="checkbox" id="popups" class="column" name="popups"> <label id="lbl_popups" for="popups">Popups</label><br>
+
+                                <h6>Pitch Arsenals</h6>
+                                <input type="checkbox" id="pitch_hand" class="column" name="pitch_hand"> <label id="lbl_pitch_hand" for="pitch_hand">Throws</label><br>
+                                <input type="checkbox" id="n" class="column" name="n"> <label id="lbl_n" for="n">Total Pitches</label><br>
+                                <input type="checkbox" id="n_ff_formatted" class="column" name="n_ff_formatted"> <label id="lbl_n_ff_formatted" for="n_ff_formatted">4-Seam %</label><br>
+                                <input type="checkbox" id="ff_avg_speed" class="column" name="ff_avg_speed"> <label id="lbl_ff_avg_speed" for="ff_avg_speed">4-Seam Avg MPH</label><br>
+                                <input type="checkbox" id="ff_avg_spin" class="column" name="ff_avg_spin"> <label id="lbl_ff_avg_spin" for="ff_avg_spin">4-Seam Avg Spin</label><br>
+                                <input type="checkbox" id="ff_avg_break_x" class="column" name="ff_avg_break_x"> <label id="lbl_ff_avg_break_x" for="ff_avg_break_x">4-Seam Avg H Break</label><br>
+                                <input type="checkbox" id="ff_avg_break_z" class="column" name="ff_avg_break_z"> <label id="lbl_ff_avg_break_z" for="ff_avg_break_z">4-Seam Avg V Break</label><br>
+                                <input type="checkbox" id="ff_avg_break" class="column" name="ff_avg_break"> <label id="lbl_ff_avg_break" for="ff_avg_break">4-Seam Avg Break</label><br>
+                                <input type="checkbox" id="ff_range_speed" class="column" name="ff_range_speed"> <label id="lbl_ff_range_speed" for="ff_range_speed">4-Seam Range MPH</label><br>
+                                <input type="checkbox" id="n_sl_formatted" class="column" name="n_sl_formatted"> <label id="lbl_n_sl_formatted" for="n_sl_formatted">Slider %</label><br>
+                                <input type="checkbox" id="sl_avg_speed" class="column" name="sl_avg_speed"> <label id="lbl_sl_avg_speed" for="sl_avg_speed">Slider Avg MPH</label><br>
+                                <input type="checkbox" id="sl_avg_spin" class="column" name="sl_avg_spin"> <label id="lbl_sl_avg_spin" for="sl_avg_spin">Slider Avg Spin</label><br>
+                                <input type="checkbox" id="sl_avg_break_x" class="column" name="sl_avg_break_x"> <label id="lbl_sl_avg_break_x" for="sl_avg_break_x">Slider Avg H Break</label><br>
+                                <input type="checkbox" id="sl_avg_break_z" class="column" name="sl_avg_break_z"> <label id="lbl_sl_avg_break_z" for="sl_avg_break_z">Slider Avg V Break</label><br>
+                                <input type="checkbox" id="sl_avg_break" class="column" name="sl_avg_break"> <label id="lbl_sl_avg_break" for="sl_avg_break">Slider Avg Break</label><br>
+                                <input type="checkbox" id="sl_range_speed" class="column" name="sl_range_speed"> <label id="lbl_sl_range_speed" for="sl_range_speed">Slider Range MPH</label><br>
+                                <input type="checkbox" id="n_ch_formatted" class="column" name="n_ch_formatted"> <label id="lbl_n_ch_formatted" for="n_ch_formatted">Change %</label><br>
+                                <input type="checkbox" id="ch_avg_speed" class="column" name="ch_avg_speed"> <label id="lbl_ch_avg_speed" for="ch_avg_speed">Change Avg MPH</label><br>
+                                <input type="checkbox" id="ch_avg_spin" class="column" name="ch_avg_spin"> <label id="lbl_ch_avg_spin" for="ch_avg_spin">Change Avg Spin</label><br>
+                                <input type="checkbox" id="ch_avg_break_x" class="column" name="ch_avg_break_x"> <label id="lbl_ch_avg_break_x" for="ch_avg_break_x">Change Avg H Break</label><br>
+                                <input type="checkbox" id="ch_avg_break_z" class="column" name="ch_avg_break_z"> <label id="lbl_ch_avg_break_z" for="ch_avg_break_z">Change Avg V Break</label><br>
+                                <input type="checkbox" id="ch_avg_break" class="column" name="ch_avg_break"> <label id="lbl_ch_avg_break" for="ch_avg_break">Change Avg Break</label><br>
+                                <input type="checkbox" id="ch_range_speed" class="column" name="ch_range_speed"> <label id="lbl_ch_range_speed" for="ch_range_speed">Change Range MPH</label><br>
+                                <input type="checkbox" id="n_cukc_formatted" class="column" name="n_cukc_formatted"> <label id="lbl_n_cukc_formatted" for="n_cukc_formatted">Curve %</label><br>
+                                <input type="checkbox" id="cu_avg_speed" class="column" name="cu_avg_speed"> <label id="lbl_cu_avg_speed" for="cu_avg_speed">Curve Avg MPH</label><br>
+                                <input type="checkbox" id="cu_avg_spin" class="column" name="cu_avg_spin"> <label id="lbl_cu_avg_spin" for="cu_avg_spin">Curve Avg Spin</label><br>
+                                <input type="checkbox" id="cu_avg_break_x" class="column" name="cu_avg_break_x"> <label id="lbl_cu_avg_break_x" for="cu_avg_break_x">Curve Avg H Break</label><br>
+                                <input type="checkbox" id="cu_avg_break_z" class="column" name="cu_avg_break_z"> <label id="lbl_cu_avg_break_z" for="cu_avg_break_z">Curve Avg V Break</label><br>
+                                <input type="checkbox" id="cu_avg_break" class="column" name="cu_avg_break"> <label id="lbl_cu_avg_break" for="cu_avg_break">Curve Avg Break</label><br>
+                                <input type="checkbox" id="cu_range_speed" class="column" name="cu_range_speed"> <label id="lbl_cu_range_speed" for="cu_range_speed">Curve Range MPH</label><br>
+                                <input type="checkbox" id="n_sift_formatted" class="column" name="n_sift_formatted"> <label id="lbl_n_sift_formatted" for="n_sift_formatted">Sinker %</label><br>
+                                <input type="checkbox" id="si_avg_speed" class="column" name="si_avg_speed"> <label id="lbl_si_avg_speed" for="si_avg_speed">Sinker Avg MPH</label><br>
+                                <input type="checkbox" id="si_avg_spin" class="column" name="si_avg_spin"> <label id="lbl_si_avg_spin" for="si_avg_spin">Sinker Avg Spin</label><br>
+                                <input type="checkbox" id="si_avg_break_x" class="column" name="si_avg_break_x"> <label id="lbl_si_avg_break_x" for="si_avg_break_x">Sinker Avg H Break</label><br>
+                                <input type="checkbox" id="si_avg_break_z" class="column" name="si_avg_break_z"> <label id="lbl_si_avg_break_z" for="si_avg_break_z">Sinker Avg V Break</label><br>
+                                <input type="checkbox" id="si_avg_break" class="column" name="si_avg_break"> <label id="lbl_si_avg_break" for="si_avg_break">Sinker Avg Break</label><br>
+                                <input type="checkbox" id="si_range_speed" class="column" name="si_range_speed"> <label id="lbl_si_range_speed" for="si_range_speed">Sinker Range MPH</label><br>
+                                <input type="checkbox" id="n_fc_formatted" class="column" name="n_fc_formatted"> <label id="lbl_n_fc_formatted" for="n_fc_formatted">Cutter %</label><br>
+                                <input type="checkbox" id="fc_avg_speed" class="column" name="fc_avg_speed"> <label id="lbl_fc_avg_speed" for="fc_avg_speed">Cutter Avg MPH</label><br>
+                                <input type="checkbox" id="fc_avg_spin" class="column" name="fc_avg_spin"> <label id="lbl_fc_avg_spin" for="fc_avg_spin">Cutter Avg Spin</label><br>
+                                <input type="checkbox" id="fc_avg_break_x" class="column" name="fc_avg_break_x"> <label id="lbl_fc_avg_break_x" for="fc_avg_break_x">Cutter Avg H Break</label><br>
+                                <input type="checkbox" id="fc_avg_break_z" class="column" name="fc_avg_break_z"> <label id="lbl_fc_avg_break_z" for="fc_avg_break_z">Cutter Avg V Break</label><br>
+                                <input type="checkbox" id="fc_avg_break" class="column" name="fc_avg_break"> <label id="lbl_fc_avg_break" for="fc_avg_break">Cutter Avg Break</label><br>
+                                <input type="checkbox" id="fc_range_speed" class="column" name="fc_range_speed"> <label id="lbl_fc_range_speed" for="fc_range_speed">Cutter Range MPH</label><br>
+                                <input type="checkbox" id="n_fs_formatted" class="column" name="n_fs_formatted"> <label id="lbl_n_fs_formatted" for="n_fs_formatted">Splitter %</label><br>
+                                <input type="checkbox" id="fs_avg_speed" class="column" name="fs_avg_speed"> <label id="lbl_fs_avg_speed" for="fs_avg_speed">Splitter Avg MPH</label><br>
+                                <input type="checkbox" id="fs_avg_spin" class="column" name="fs_avg_spin"> <label id="lbl_fs_avg_spin" for="fs_avg_spin">Splitter Avg Spin</label><br>
+                                <input type="checkbox" id="fs_avg_break_x" class="column" name="fs_avg_break_x"> <label id="lbl_fs_avg_break_x" for="fs_avg_break_x">Splitter Avg H Break</label><br>
+                                <input type="checkbox" id="fs_avg_break_z" class="column" name="fs_avg_break_z"> <label id="lbl_fs_avg_break_z" for="fs_avg_break_z">Splitter Avg V Break</label><br>
+                                <input type="checkbox" id="fs_avg_break" class="column" name="fs_avg_break"> <label id="lbl_fs_avg_break" for="fs_avg_break">Splitter Avg Break</label><br>
+                                <input type="checkbox" id="fs_range_speed" class="column" name="fs_range_speed"> <label id="lbl_fs_range_speed" for="fs_range_speed">Splitter Range MPH</label><br>
+                                <input type="checkbox" id="n_kn_formatted" class="column" name="n_kn_formatted"> <label id="lbl_n_kn_formatted" for="n_kn_formatted">Knuckle %</label><br>
+                                <input type="checkbox" id="kn_avg_speed" class="column" name="kn_avg_speed"> <label id="lbl_kn_avg_speed" for="kn_avg_speed">Knuckle Avg MPH</label><br>
+                                <input type="checkbox" id="kn_avg_spin" class="column" name="kn_avg_spin"> <label id="lbl_kn_avg_spin" for="kn_avg_spin">Knuckle Avg Spin</label><br>
+                                <input type="checkbox" id="kn_avg_break_x" class="column" name="kn_avg_break_x"> <label id="lbl_kn_avg_break_x" for="kn_avg_break_x">Knuckle Avg H Break</label><br>
+                                <input type="checkbox" id="kn_avg_break_z" class="column" name="kn_avg_break_z"> <label id="lbl_kn_avg_break_z" for="kn_avg_break_z">Knuckle Avg V Break</label><br>
+                                <input type="checkbox" id="kn_avg_break" class="column" name="kn_avg_break"> <label id="lbl_kn_avg_break" for="kn_avg_break">Knuckle Avg Break</label><br>
+                                <input type="checkbox" id="kn_range_speed" class="column" name="kn_range_speed"> <label id="lbl_kn_range_speed" for="kn_range_speed">Knuckle Range MPH</label><br>
+                                <input type="checkbox" id="n_fastball_formatted" class="column" name="n_fastball_formatted"> <label id="lbl_n_fastball_formatted" for="n_fastball_formatted">Fastball %</label><br>
+                                <input type="checkbox" id="fastball_avg_speed" class="column" name="fastball_avg_speed"> <label id="lbl_fastball_avg_speed" for="fastball_avg_speed">Fastball Avg MPH</label><br>
+                                <input type="checkbox" id="fastball_avg_spin" class="column" name="fastball_avg_spin"> <label id="lbl_fastball_avg_spin" for="fastball_avg_spin">Fastball Avg Spin</label><br>
+                                <input type="checkbox" id="fastball_avg_break_x" class="column" name="fastball_avg_break_x"> <label id="lbl_fastball_avg_break_x" for="fastball_avg_break_x">Fastball Avg H Break</label><br>
+                                <input type="checkbox" id="fastball_avg_break_z" class="column" name="fastball_avg_break_z"> <label id="lbl_fastball_avg_break_z" for="fastball_avg_break_z">Fastball Avg V Break</label><br>
+                                <input type="checkbox" id="fastball_avg_break" class="column" name="fastball_avg_break"> <label id="lbl_fastball_avg_break" for="fastball_avg_break">Fastball Avg Break</label><br>
+                                <input type="checkbox" id="fastball_range_speed" class="column" name="fastball_range_speed"> <label id="lbl_fastball_range_speed" for="fastball_range_speed">Fastball Range MPH</label><br>
+                                <input type="checkbox" id="n_breaking_formatted" class="column" name="n_breaking_formatted"> <label id="lbl_n_breaking_formatted" for="n_breaking_formatted">Breaking %</label><br>
+                                <input type="checkbox" id="breaking_avg_speed" class="column" name="breaking_avg_speed"> <label id="lbl_breaking_avg_speed" for="breaking_avg_speed">Breaking Avg MPH</label><br>
+                                <input type="checkbox" id="breaking_avg_spin" class="column" name="breaking_avg_spin"> <label id="lbl_breaking_avg_spin" for="breaking_avg_spin">Breaking Avg Spin</label><br>
+                                <input type="checkbox" id="breaking_avg_break_x" class="column" name="breaking_avg_break_x"> <label id="lbl_breaking_avg_break_x" for="breaking_avg_break_x">Breaking Avg H Break</label><br>
+                                <input type="checkbox" id="breaking_avg_break_z" class="column" name="breaking_avg_break_z"> <label id="lbl_breaking_avg_break_z" for="breaking_avg_break_z">Breaking Avg V Break</label><br>
+                                <input type="checkbox" id="breaking_avg_break" class="column" name="breaking_avg_break"> <label id="lbl_breaking_avg_break" for="breaking_avg_break">Breaking Avg Break</label><br>
+                                <input type="checkbox" id="breaking_range_speed" class="column" name="breaking_range_speed"> <label id="lbl_breaking_range_speed" for="breaking_range_speed">Breaking Range MPH</label><br>
+                                <input type="checkbox" id="n_offspeed_formatted" class="column" name="n_offspeed_formatted"> <label id="lbl_n_offspeed_formatted" for="n_offspeed_formatted">Offspeed %</label><br>
+                                <input type="checkbox" id="offspeed_avg_speed" class="column" name="offspeed_avg_speed"> <label id="lbl_offspeed_avg_speed" for="offspeed_avg_speed">Offspeed Avg MPH</label><br>
+                                <input type="checkbox" id="offspeed_avg_spin" class="column" name="offspeed_avg_spin"> <label id="lbl_offspeed_avg_spin" for="offspeed_avg_spin">Offspeed Avg Spin</label><br>
+                                <input type="checkbox" id="offspeed_avg_break_x" class="column" name="offspeed_avg_break_x"> <label id="lbl_offspeed_avg_break_x" for="offspeed_avg_break_x">Offspeed Avg H Break</label><br>
+                                <input type="checkbox" id="offspeed_avg_break_z" class="column" name="offspeed_avg_break_z"> <label id="lbl_offspeed_avg_break_z" for="offspeed_avg_break_z">Offspeed Avg V Break</label><br>
+                                <input type="checkbox" id="offspeed_avg_break" class="column" name="offspeed_avg_break"> <label id="lbl_offspeed_avg_break" for="offspeed_avg_break">Offspeed Avg Break</label><br>
+                                <input type="checkbox" id="offspeed_range_speed" class="column" name="offspeed_range_speed"> <label id="lbl_offspeed_range_speed" for="offspeed_range_speed">Offspeed Range MPH</label><br>
+
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+
+        <div class="form-group">
+            <button id="btnUpdate" class="btn btn-default">Update</button>
+        </div>
+        <div class="form-group">
+            <button id="btnCSV" class="btn btn-default">Download CSV</button>
+        </div>
+        <div class="form-group">
+                <button id="btnChart" class="btn btn-default" style="background-color: #f5f5f5; color: #000">Create Chart</button>
+            </div>
+
+        </form>
+     <div id="loading" style="display: none; text-align: center;padding-top: 3rem;">
+         <h5>Loading Data...</h5>
+    </div>
+    <div id="data-loaded">
+    <br><br>
+    <div id="scatterContainer" style="display: none;">
+        <div id="scatter" style="background-color: #e8e8e8; text-align: center;"><svg width="830" height="420" id="svg_scatter"><rect height="100%" width="100%" fill="#e8e8e8"></rect><g transform="translate(0,380)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle" style="font-family: &quot;Roboto Condensed&quot;; font-size: 0.8rem;"><path class="domain" stroke="#000" d="M20.5,0V0.5H810.5V0"></path><g class="tick" opacity="1" transform="translate(35.389610389610404,0)"><line stroke="#000" y2="6" x1="0.5" x2="0.5"></line><text fill="#000" y="9" x="0.5" dy="0.71em">.160</text></g><g class="tick" opacity="1" transform="translate(137.98701298701297,0)"><line stroke="#000" y2="6" x1="0.5" x2="0.5"></line><text fill="#000" y="9" x="0.5" dy="0.71em">.180</text></g><g class="tick" opacity="1" transform="translate(240.58441558441567,0)"><line stroke="#000" y2="6" x1="0.5" x2="0.5"></line><text fill="#000" y="9" x="0.5" dy="0.71em">.200</text></g><g class="tick" opacity="1" transform="translate(343.1818181818182,0)"><line stroke="#000" y2="6" x1="0.5" x2="0.5"></line><text fill="#000" y="9" x="0.5" dy="0.71em">.220</text></g><g class="tick" opacity="1" transform="translate(445.7792207792207,0)"><line stroke="#000" y2="6" x1="0.5" x2="0.5"></line><text fill="#000" y="9" x="0.5" dy="0.71em">.240</text></g><g class="tick" opacity="1" transform="translate(548.3766233766235,0)"><line stroke="#000" y2="6" x1="0.5" x2="0.5"></line><text fill="#000" y="9" x="0.5" dy="0.71em">.260</text></g><g class="tick" opacity="1" transform="translate(650.9740259740262,0)"><line stroke="#000" y2="6" x1="0.5" x2="0.5"></line><text fill="#000" y="9" x="0.5" dy="0.71em">.280</text></g><g class="tick" opacity="1" transform="translate(753.5714285714286,0)"><line stroke="#000" y2="6" x1="0.5" x2="0.5"></line><text fill="#000" y="9" x="0.5" dy="0.71em">.300</text></g></g><g><circle cx="20" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="50.77922077922081" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="137.98701298701297" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="137.98701298701297" cy="368.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="148.2467532467532" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="153.37662337662337" cy="370.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="173.8961038961039" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="179.02597402597405" cy="370.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="189.2857142857143" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="189.2857142857143" cy="368.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="204.6753246753247" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="204.6753246753247" cy="368.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="214.935064935065" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="220.06493506493507" cy="370.73718229924066" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="220.06493506493507" cy="363.73718229924066" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="225.19480519480524" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="235.45454545454552" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="240.58441558441567" cy="370.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="240.58441558441567" cy="363.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="245.71428571428578" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="255.97402597402606" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="255.97402597402606" cy="368.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="271.3636363636363" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="276.4935064935064" cy="370.73718229924066" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="276.4935064935064" cy="363.73718229924066" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="276.4935064935064" cy="356.73718229924066" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="281.6233766233766" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="286.75324675324674" cy="370.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="291.8831168831168" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="291.8831168831168" cy="365.9743645984813" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="302.14285714285705" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="307.27272727272725" cy="370.73718229924077" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="312.4025974025974" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="312.4025974025974" cy="365.9743645984815" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="312.4025974025974" cy="358.9743645984815" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="327.7922077922078" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="332.92207792207796" cy="370.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="332.92207792207796" cy="363.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="343.1818181818182" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="343.1818181818182" cy="368.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="348.31168831168833" cy="363.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="348.31168831168833" cy="356.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="348.31168831168833" cy="349.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="348.31168831168833" cy="342.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="353.4415584415584" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="358.5714285714286" cy="370.73718229924077" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="358.5714285714286" cy="363.73718229924077" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="358.5714285714286" cy="356.73718229924077" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="363.70129870129875" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="363.70129870129875" cy="351.9743645984815" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="373.961038961039" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="379.0909090909091" cy="370.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="379.0909090909091" cy="363.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="379.0909090909091" cy="356.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="379.0909090909091" cy="349.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="379.0909090909091" cy="342.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="379.0909090909091" cy="335.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="384.22077922077926" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="384.22077922077926" cy="330.97436459848143" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="384.22077922077926" cy="323.97436459848143" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="384.22077922077926" cy="316.97436459848143" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="394.4805194805195" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="394.4805194805195" cy="368.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="394.4805194805195" cy="361.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="399.61038961038963" cy="356.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="404.74025974025983" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="415.0000000000001" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="420.1298701298701" cy="370.73718229924054" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="420.1298701298701" cy="363.73718229924054" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="420.1298701298701" cy="356.73718229924054" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="425.25974025974017" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="425.25974025974017" cy="351.97436459848115" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="425.25974025974017" cy="344.97436459848115" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="425.25974025974017" cy="337.97436459848115" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="430.38961038961037" cy="370.73718229924077" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="430.38961038961037" cy="363.73718229924077" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="435.51948051948045" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="440.6493506493506" cy="370.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="445.7792207792207" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="445.7792207792207" cy="365.9743645984813" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="445.7792207792207" cy="358.9743645984813" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="445.7792207792207" cy="351.9743645984813" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="450.9090909090909" cy="370.73718229924077" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="456.03896103896096" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="456.03896103896096" cy="365.97436459848143" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="461.16883116883116" cy="370.73718229924077" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="466.2987012987013" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="466.2987012987013" cy="365.9743645984815" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="471.4285714285714" cy="370.73718229924066" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="471.4285714285714" cy="361.2115468977221" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="471.4285714285714" cy="354.2115468977221" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="471.4285714285714" cy="347.2115468977221" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="476.5584415584416" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="481.68831168831167" cy="370.73718229924066" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="481.68831168831167" cy="363.73718229924066" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="481.68831168831167" cy="356.73718229924066" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="486.81818181818187" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="486.81818181818187" cy="351.97436459848143" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="486.81818181818187" cy="344.97436459848143" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="486.81818181818187" cy="337.97436459848143" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="491.9480519480519" cy="370.7371822992406" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="491.9480519480519" cy="363.7371822992406" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="491.9480519480519" cy="356.7371822992406" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="497.0779220779221" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="497.0779220779221" cy="351.9743645984813" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="497.0779220779221" cy="344.9743645984813" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="497.0779220779221" cy="337.9743645984813" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="497.0779220779221" cy="330.9743645984813" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="497.0779220779221" cy="323.9743645984813" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="507.3376623376624" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="507.3376623376624" cy="368.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="512.4675324675325" cy="363.73718229924066" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="517.5974025974026" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="522.7272727272727" cy="370.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="522.7272727272727" cy="363.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="527.8571428571429" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="527.8571428571429" cy="358.97436459848143" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="532.9870129870129" cy="370.7371822992406" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="532.9870129870129" cy="363.7371822992406" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="538.1168831168831" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="538.1168831168831" cy="358.97436459848126" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="538.1168831168831" cy="351.97436459848126" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="538.1168831168831" cy="344.97436459848126" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="538.1168831168831" cy="337.97436459848126" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="543.2467532467534" cy="370.73718229924094" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="543.2467532467534" cy="363.73718229924094" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="543.2467532467534" cy="333.2115468977222" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="553.5064935064936" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="553.5064935064936" cy="368.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="558.6363636363637" cy="363.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="563.7662337662339" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="568.8961038961039" cy="370.7371822992406" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="568.8961038961039" cy="363.7371822992406" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="574.025974025974" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="574.025974025974" cy="358.97436459848126" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="574.025974025974" cy="351.97436459848126" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="589.4155844155845" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="594.5454545454547" cy="370.7371822992408" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="594.5454545454547" cy="363.7371822992408" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="599.6753246753248" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="604.8051948051949" cy="370.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="604.8051948051949" cy="363.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="615.0649350649352" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="615.0649350649352" cy="368.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="620.1948051948053" cy="363.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="635.5844155844156" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="640.7142857142859" cy="370.7371822992408" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="640.7142857142859" cy="363.7371822992408" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="650.9740259740262" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="661.2337662337661" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="666.3636363636363" cy="370.7371822992407" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="671.4935064935064" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="671.4935064935064" cy="365.97436459848143" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="676.6233766233764" cy="370.7371822992406" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="681.7532467532466" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="697.142857142857" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="702.2727272727273" cy="370.7371822992408" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="717.6623376623376" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="727.9220779220777" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="748.4415584415584" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="789.4805194805195" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle><circle cx="810" cy="375.5" r="2.5" style="fill: rgb(57, 144, 152);"></circle></g><text x="415" y="40" text-anchor="middle" style="font-family: &quot;Roboto Condensed&quot;; font-size: 1rem;">xBA Breakdown</text></svg></div>
+        <div style="display: inline-block;" class="form-group">
+                <div class="dropdown">
+                        <span id="lblChartType" class="ddl-label">Chart Type: Beeswarm</span>
+                        <div class="dropdown-arrow">▾</div>
+            <select id="ddlChartType" class="form-control dropdown-fix">
+                <option value="beeswarm" selected="">Chart Type: Beeswarm</option>
+                <option value="scatter">Chart Type: Scatter</option>
+            </select>
+            </div>
+        </div>
+
+        <div style="display: inline-block;" class="form-group">
+                <div class="dropdown">
+                        <span id="lblX" class="ddl-label">xBA&nbsp;</span>
+                        <div class="dropdown-arrow">▾</div>
+        <select id="ddlX" class="form-control dropdown-fix" selected="selected">
+
+            <option value="player_age">Age</option><option value="p_game">G</option><option value="p_formatted_ip">IP</option><option value="p_total_pa">BF</option><option value="p_ab">AB</option><option value="p_total_hits">H</option><option value="p_single">1B</option><option value="p_double">2B</option><option value="p_triple">3B</option><option value="p_home_run">HR</option><option value="p_strikeout">SO</option><option value="p_walk">BB</option><option value="p_k_percent">K%</option><option value="p_bb_percent">BB%</option><option value="batting_avg">AVG</option><option value="slg_percent">SLG</option><option value="on_base_percent">OBP</option><option value="on_base_plus_slg">OPS</option><option value="xba">xBA</option><option value="xslg">xSLG</option><option value="woba">wOBA</option><option value="xwoba">xwOBA</option><option value="xobp">xOBP</option><option value="xiso">xISO</option><option value="exit_velocity_avg">Avg EV (MPH)</option><option value="launch_angle_avg">Avg LA (°)</option><option value="barrel_batted_rate">Barrel%</option></select>
+            </div>
+        </div>
+        <div id="yHolder" style="display: none;" class="form-group">
+                <div class="dropdown">
+                        <span id="lblY" class="ddl-label">xBA&nbsp;</span>
+                        <div class="dropdown-arrow">▾</div>
+        <select id="ddlY" class="form-control dropdown-fix" selected="selected">
+            <option value="player_age">Age</option><option value="p_game">G</option><option value="p_formatted_ip">IP</option><option value="p_total_pa">BF</option><option value="p_ab">AB</option><option value="p_total_hits">H</option><option value="p_single">1B</option><option value="p_double">2B</option><option value="p_triple">3B</option><option value="p_home_run">HR</option><option value="p_strikeout">SO</option><option value="p_walk">BB</option><option value="p_k_percent">K%</option><option value="p_bb_percent">BB%</option><option value="batting_avg">AVG</option><option value="slg_percent">SLG</option><option value="on_base_percent">OBP</option><option value="on_base_plus_slg">OPS</option><option value="xba">xBA</option><option value="xslg">xSLG</option><option value="woba">wOBA</option><option value="xwoba">xwOBA</option><option value="xobp">xOBP</option><option value="xiso">xISO</option><option value="exit_velocity_avg">Avg EV (MPH)</option><option value="launch_angle_avg">Avg LA (°)</option><option value="barrel_batted_rate">Barrel%</option></select>
+            </div>
+        </div>
+        <div id="rHolder" style="display: none;" class="form-group">
+                <div class="dropdown">
+                        <span id="lblR2" class="ddl-label">Show R²: No</span>
+                        <div class="dropdown-arrow">▾</div>
+            <select id="ddlR2" class="form-control dropdown-fix" selected="selected">
+                <option value="no" selected="">Show R²: No</option>
+                <option value="yes">Show R²: Yes</option>
+            </select>
+            </div>
+        </div>
+        <div id="txtFilter" style="display: inline-block;" class="form-group">
+            <input class="dropdown" type="text" id="filter" style="line-height: .4; padding: .55rem;" placeholder="ENTER LAST NAME...">
+        </div>
+
+        <div style="display: inline-block;" class="form-group">
+                <button id="btnSave" class="save btn btn-default">Save Image</button>
+            </div>
+    </div>
+</div>
+
+</div>
