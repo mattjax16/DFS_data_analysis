@@ -8,11 +8,19 @@ This is a project to do data analysis on baseball and use that insight to hedge 
     matplotlib
     scipy
     pandas
-    
+    psycopg2
 <br>
 
 ---
+###  PostgreSQL info:
+To connect to the postgreSQL servers the python library psycopg2 is used.
 
+The psycopg2.connect function is used along with the parameters in the database.ini file to connect to the proper 
+databases.
+
+To change settings on what database is being used make changes in the database.ini file
+
+---
 ### TO RUN:
 1. 
 
