@@ -9,6 +9,7 @@ This is a project to do data analysis on baseball and use that insight to hedge 
     scipy
     pandas
     psycopg2
+    sqlalchemy
 <br>
 
 ---
