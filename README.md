@@ -18,7 +18,8 @@ To connect to the postgreSQL servers the python library psycopg2 is used.
 The psycopg2.connect function is used along with the parameters in the database.ini file to connect to the proper 
 databases.
 
-To change settings on what database is being used make changes in the database.ini file
+To change settings on what database is being used make changes in the database.ini file 
+(currently is being ignored in .gitignore)
 
 ---
 ### TO RUN:
