@@ -23,6 +23,7 @@ class DkScrapper():
     '''
     def __init__(self):
         self.mlb_cat_urls = {'50/50':'https://www.draftkings.com/lobby#/MLB/0/IsFiftyfifty'}
+        self.session = HTMLSession()
         self.con = self.config()
 
 
@@ -51,14 +52,41 @@ class DkScrapper():
         return con
 
 
+    def login(self):
+        '''
+        This function is to login the person to draft kings trying to use the scrapper
+        The login info comes from draftkings_scrapper.ini
+        :return:
+        '''
+
+        login_form_url = 'https://api.draftkings.com/users/v3/providers/draftkings/logins?format=json'
+
+        login_form = {
+                "login": self.con['email'],
+                "password": self.con['password'],
+                "host": "api.draftkings.com",
+                }
+
+
+
+
+        response = self.session.post(login_form_url,data=login_form)
+        print(f'Login Response: {response.status_code}')
+        if response.status_code == 200:
+            print(f'Successfully Logged In!')
+        else:
+            print(f'Login Failed!')
+
+        return
+
     def get_response(self,url):
         '''
 
         :param url (string): a url of a webpage
         :return:
         '''
-        session = HTMLSession()
-        response = session.get(url)
+
+        response = self.session.get(url)
 
         print(f'Response: {response.status_code}')
         return response
@@ -74,6 +102,18 @@ class DkScrapper():
         return div_html
 
 
+    def get_draft_csv(self,
+        csv_link ='https://www.draftkings.com/lineup/getavailableplayerscsv?contestTypeId=28&draftGroupId=55478'):
+
+        '''
+        This is a function to request the csv file from the link
+        :param csv_link:
+        :return:
+        '''
+
+        return
+
+
 
 
 '''
@@ -84,12 +124,14 @@ The main function used to test functions from this python script
 def main():
     scrapper = DkScrapper()
 
-    c = scrapper.config()
+    t_login = scrapper.login()
 
     test_url = scrapper.mlb_cat_urls['50/50']
-    r = scrapper.get_response(test_url)
+    r = scrapper.get_response('https://www.draftkings.com/lineup/getavailableplayerscsv?contestTypeId=28&draftGroupId=55478')
 
-    grid_canvas_tag = 'grid-canvas'
+    r.html.render(sleep=1,keep_page=True,scrolldown=1)
+
+    grid_canvas_tag = 'dk-grid slickgrid_521465 ui-widget'
     grid_canvas_html = scrapper.get_div_html(r,grid_canvas_tag)
 
     print('Done Maine()')

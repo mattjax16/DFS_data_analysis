@@ -14,6 +14,7 @@ This is a project to do data analysis on baseball and use that insight to hedge 
     requests    
     requests-html
     beautifulsoup4
+    scrapy
 
 <br>
 
