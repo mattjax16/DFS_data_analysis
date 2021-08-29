@@ -35,7 +35,7 @@ def config(filename='database.ini', section='postgresql'):
 
 def connect():
     """ Connect to the PostgreSQL database server """
-    conn = None
+
     try:
         # read connection parameters
         params = config()
@@ -47,6 +47,7 @@ def connect():
         return conn
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
+        print(f'Connect did not work')
         sys.exit(1)
 
 

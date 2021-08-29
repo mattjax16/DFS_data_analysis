@@ -3,4 +3,4 @@ __pycache__
 .mp4
 
 # ignoring database initilization variables for security
-postgres_files/database.ini
+.ini

@@ -10,6 +10,11 @@ This is a project to do data analysis on baseball and use that insight to hedge 
     pandas
     psycopg2
     sqlalchemy
+    palletable
+    requests    
+    requests-html
+    beautifulsoup4
+
 <br>
 
 ---
@@ -142,33 +147,7 @@ Hitting statistics for Pitchers will not be counted, and Pitching statistics for
 Lineup Requirements
 Lineups will consist of 10 players and must include players scheduled to play in at least 2 different MLB games. Lineups must have no more than 5 hitters from any one team. The 10 roster positions are:
 
-2
-
-P
-
-1
-
-C
-
-1
-
-1B
-
-1
-
-2B
-
-1
-
-3B
-
-1
-
-SS
-
-3
-
-OF
+P ,C ,1B ,2B ,3B ,SS ,OF ,OF ,OF
 
 Player Pool
 The Player Pool will consist of all MLB players expected to be on the active roster for any team scheduled to play in the contest Game Set. Occasionally a player may be missing from the Player Pool due to trades or other unforeseen circumstances.
