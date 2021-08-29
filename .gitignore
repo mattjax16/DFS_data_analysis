@@ -3,4 +3,5 @@ __pycache__
 .mp4
 
 # ignoring database initilization variables for security
-.ini
+draftkings_files/draftkings_scrapper.py
+postgres_files/database.ini
